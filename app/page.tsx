@@ -29,7 +29,7 @@ export default function Home() {
       <StarfieldAnimation />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-4">
+      <section className="relative min-h-screen flex items-center justify-center px-4 bg-gradient-to-b from-transparent to-purple-900/20">
         <div className="text-center z-10 max-w-4xl mx-auto">
           <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-600 drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
             Sirio Star
