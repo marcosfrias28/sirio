@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 
 export default function StarfieldAnimation() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -9,7 +9,7 @@ export default function StarfieldAnimation() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     // Set canvas size
@@ -18,12 +18,12 @@ export default function StarfieldAnimation() {
       canvas.height = window.innerHeight;
     };
     resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener("resize", resizeCanvas);
 
     // Star properties
-    const stars: { x: number; y: number; z: number; }[] = [];
+    const stars: { x: number; y: number; z: number }[] = [];
     const STAR_COUNT = 200; // Reduced from 400
-    const STAR_SPEED = 0.15; // Reduced from 0.2
+    const STAR_SPEED = 0.7; // Reduced from 0.2
     const MAX_DEPTH = 1000;
 
     // Initialize stars with fewer in the center
@@ -34,27 +34,27 @@ export default function StarfieldAnimation() {
         x = Math.random() * canvas.width - canvas.width / 2;
         y = Math.random() * canvas.height - canvas.height / 2;
       } while (
-        Math.abs(x) < canvas.width * 0.2 && 
+        Math.abs(x) < canvas.width * 0.2 &&
         Math.abs(y) < canvas.height * 0.2
       );
-      
+
       stars.push({
         x,
         y,
-        z: Math.random() * MAX_DEPTH
+        z: Math.random() * MAX_DEPTH,
       });
     }
 
     // Animation loop
     const animate = () => {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)'; // Reduced opacity from 0.1
+      ctx.fillStyle = "rgba(0, 0, 0, 0.05)"; // Reduced opacity from 0.1
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Update and draw stars
       const centerX = canvas.width / 2;
       const centerY = canvas.height / 2;
 
-      stars.forEach(star => {
+      stars.forEach((star) => {
         star.z -= STAR_SPEED;
 
         if (star.z <= 0) {
@@ -64,7 +64,7 @@ export default function StarfieldAnimation() {
             star.x = Math.random() * canvas.width - centerX;
             star.y = Math.random() * canvas.height - centerY;
           } while (
-            Math.abs(star.x) < canvas.width * 0.2 && 
+            Math.abs(star.x) < canvas.width * 0.2 &&
             Math.abs(star.y) < canvas.height * 0.2
           );
         }
@@ -74,7 +74,9 @@ export default function StarfieldAnimation() {
         const size = (1 - star.z / MAX_DEPTH) * 2; // Reduced max size from 3
 
         ctx.beginPath();
-        ctx.fillStyle = `rgba(255, 255, 255, ${(1 - star.z / MAX_DEPTH) * 0.5})`; // Reduced max opacity by 50%
+        ctx.fillStyle = `rgba(255, 255, 255, ${
+          (1 - star.z / MAX_DEPTH) * 0.5
+        })`; // Reduced max opacity by 50%
         ctx.arc(x, y, size, 0, 2 * Math.PI);
         ctx.fill();
       });
@@ -85,7 +87,7 @@ export default function StarfieldAnimation() {
     animate();
 
     return () => {
-      window.removeEventListener('resize', resizeCanvas);
+      window.removeEventListener("resize", resizeCanvas);
     };
   }, []);
 

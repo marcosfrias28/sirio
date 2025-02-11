@@ -1,26 +1,33 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Card } from '@/components/ui/card';
-import { Star, Sparkles, Instagram, Twitter, Facebook, Mail } from 'lucide-react';
-import CountdownTimer from '@/components/CountdownTimer';
-import NewsletterForm from '@/components/NewsletterForm';
-import StarfieldAnimation from '@/components/StarfieldAnimation';
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card } from "@/components/ui/card";
+import {
+  Star,
+  Sparkles,
+  Instagram,
+  Twitter,
+  Facebook,
+  Mail,
+} from "lucide-react";
+import CountdownTimer from "@/components/CountdownTimer";
+import NewsletterForm from "@/components/NewsletterForm";
+import StarfieldAnimation from "@/components/StarfieldAnimation";
 
 export default function Home() {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setEmail('');
+    setEmail("");
   };
 
   return (
     <main className="relative min-h-screen bg-black text-white overflow-hidden">
       <StarfieldAnimation />
-      
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4">
         <div className="text-center z-10 max-w-4xl mx-auto">
@@ -31,12 +38,17 @@ export default function Home() {
             L&apos;attesa sta per finire
           </p>
           <p className="text-lg md:text-xl mb-12 text-gray-400 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]">
-            Rivoluziona il tuo stile con le tute che ti porteranno in un&apos;altra dimensione
+            Rivoluziona il tuo stile con le tute che ti porteranno in
+            un&apos;altra dimensione
           </p>
           <Button
             size="lg"
             className="bg-purple-600 hover:bg-purple-700 text-white shadow-lg"
-            onClick={() => document.getElementById('newsletter')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() =>
+              document
+                .getElementById("newsletter")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
           >
             <Sparkles className="mr-2 h-4 w-4" />
             Iscriviti alla newsletter
@@ -84,12 +96,16 @@ export default function Home() {
       {/* Chi Siamo Section */}
       <section className="relative py-24 px-4 bg-gradient-to-b from-transparent to-purple-900/20">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-8 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]">Chi Siamo</h2>
+          <h2 className="text-4xl font-bold mb-8 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]">
+            Chi Siamo
+          </h2>
           <Card className="p-8 bg-black/30 backdrop-blur-lg border-purple-500/20">
             <p className="text-lg text-gray-300 leading-relaxed">
-              Sirio Star rappresenta l&apos;incontro tra moda e innovazione. Le nostre tute sono create con materiali 
-              all&apos;avanguardia e un design ispirato alle meraviglie dell&apos;universo. Ogni capo è pensato per chi 
-              desidera distinguersi con uno stile unico e confortevole.
+              Sirio Star rappresenta l&apos;incontro tra moda e innovazione. Le
+              nostre tute sono create con materiali all&apos;avanguardia e un
+              design ispirato alle meraviglie dell&apos;universo. Ogni capo è
+              pensato per chi desidera distinguersi con uno stile unico e
+              confortevole.
             </p>
           </Card>
         </div>
@@ -98,21 +114,28 @@ export default function Home() {
       {/* Countdown Section */}
       <section className="relative py-24 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-12 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]">Il lancio si avvicina</h2>
+          <h2 className="text-4xl font-bold mb-12 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]">
+            Il lancio si avvicina
+          </h2>
           <CountdownTimer targetDate="2024-05-01" />
         </div>
       </section>
 
       {/* Newsletter Section */}
-      <section id="newsletter" className="relative py-24 px-4 bg-gradient-to-t from-transparent to-purple-900/20">
+      <section
+        id="newsletter"
+        className="relative py-24 px-4 bg-gradient-to-t from-transparent to-purple-900/20"
+      >
         <div className="max-w-md mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-8 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]">Resta Aggiornato</h2>
+          <h2 className="text-4xl font-bold mb-8 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]">
+            Resta Aggiornato
+          </h2>
           <NewsletterForm />
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="relative py-12 px-4 bg-black/80 backdrop-blur-sm">
+      <footer className="relative py-12 px-4 bg-black/80 backdrop-blur-xs">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="flex items-center space-x-2">
@@ -129,7 +152,10 @@ export default function Home() {
               <a href="#" className="hover:text-purple-400 transition-colors">
                 <Facebook className="h-6 w-6" />
               </a>
-              <a href="mailto:info@siriostar.com" className="hover:text-purple-400 transition-colors">
+              <a
+                href="mailto:info@siriostar.com"
+                className="hover:text-purple-400 transition-colors"
+              >
                 <Mail className="h-6 w-6" />
               </a>
             </div>
