@@ -6,9 +6,9 @@ import { Space_Grotesk } from "next/font/google";
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Sirio Star - L'attesa sta per finire",
+  title: "Sirio Star - The wait is almost over",
   description:
-    "Rivoluziona il tuo stile con le tute che ti porteranno in un'altra dimensione.",
+    "Revolutionize your style with jumpsuits that will take you to another dimension.",
 };
 
 export default function RootLayout({
@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="it" className="dark">
+    <html lang="en" className="dark">
       <body className={spaceGrotesk.className}>
         {children}
         {/* <Toaster /> */}

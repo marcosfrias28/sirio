@@ -22,8 +22,8 @@ export default function StarfieldAnimation() {
 
     // Star properties
     const stars: { x: number; y: number; z: number }[] = [];
-    const STAR_COUNT = 200; // Reduced from 400
-    const STAR_SPEED = 0.7; // Reduced from 0.2
+    const STAR_COUNT = 200;
+    const STAR_SPEED = 0.7;
     const MAX_DEPTH = 1000;
 
     // Initialize stars with fewer in the center
@@ -47,7 +47,7 @@ export default function StarfieldAnimation() {
 
     // Animation loop
     const animate = () => {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.05)"; // Reduced opacity from 0.1
+      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Update and draw stars
@@ -71,12 +71,12 @@ export default function StarfieldAnimation() {
 
         const x = (star.x / star.z) * 100 + centerX;
         const y = (star.y / star.z) * 100 + centerY;
-        const size = (1 - star.z / MAX_DEPTH) * 2; // Reduced max size from 3
+        const size = (1 - star.z / MAX_DEPTH) * 2;
 
         ctx.beginPath();
         ctx.fillStyle = `rgba(255, 255, 255, ${
           (1 - star.z / MAX_DEPTH) * 0.5
-        })`; // Reduced max opacity by 50%
+        })`;
         ctx.arc(x, y, size, 0, 2 * Math.PI);
         ctx.fill();
       });
@@ -94,7 +94,7 @@ export default function StarfieldAnimation() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed top-0 left-0 w-full h-full pointer-events-none opacity-60" // Added opacity-60 class
+      className="fixed top-0 left-0 w-full h-full pointer-events-none opacity-60"
     />
   );
 }

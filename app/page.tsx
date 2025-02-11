@@ -35,11 +35,11 @@ export default function Home() {
             Sirio Star
           </h1>
           <p className="text-2xl md:text-3xl mb-8 text-gray-300 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]">
-            L&apos;attesa sta per finire
+            The wait is almost over
           </p>
           <p className="text-lg md:text-xl mb-12 text-gray-400 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]">
-            Rivoluziona il tuo stile con le tute che ti porteranno in
-            un&apos;altra dimensione
+            Revolutionize your style with jumpsuits that will take you to
+            another dimension
           </p>
           <Button
             size="lg"
@@ -51,7 +51,7 @@ export default function Home() {
             }
           >
             <Sparkles className="mr-2 h-4 w-4" />
-            Iscriviti alla newsletter
+            Sign up for the newsletter
           </Button>
         </div>
       </section>
@@ -60,7 +60,7 @@ export default function Home() {
       <section className="relative py-24 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-center drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]">
-            La Collezione
+            The Collection
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <Card className="p-6 bg-black/30 backdrop-blur-lg border-purple-500/20 overflow-hidden group">
@@ -73,7 +73,7 @@ export default function Home() {
               </div>
               <div className="mt-4">
                 <h3 className="text-xl font-bold">Sirio Hoodie</h3>
-                <p className="text-gray-400">Design ispirato alle stelle</p>
+                <p className="text-gray-400">Star-inspired design</p>
               </div>
             </Card>
             <Card className="p-6 bg-black/30 backdrop-blur-lg border-purple-500/20 overflow-hidden group">
@@ -86,26 +86,26 @@ export default function Home() {
               </div>
               <div className="mt-4">
                 <h3 className="text-xl font-bold">Sirio Pants</h3>
-                <p className="text-gray-400">Comfort galattico</p>
+                <p className="text-gray-400">Galactic comfort</p>
               </div>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Chi Siamo Section */}
+      {/* About Us Section */}
       <section className="relative py-24 px-4 bg-gradient-to-b from-transparent to-purple-900/20">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-8 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]">
-            Chi Siamo
+            About Us
           </h2>
           <Card className="p-8 bg-black/30 backdrop-blur-lg border-purple-500/20">
             <p className="text-lg text-gray-300 leading-relaxed">
-              Sirio Star rappresenta l&apos;incontro tra moda e innovazione. Le
-              nostre tute sono create con materiali all&apos;avanguardia e un
-              design ispirato alle meraviglie dell&apos;universo. Ogni capo è
-              pensato per chi desidera distinguersi con uno stile unico e
-              confortevole.
+              Sirio Star represents the meeting of fashion and innovation. Our
+              jumpsuits are created with cutting-edge materials and a design
+              inspired by the wonders of the universe. Each garment is designed
+              for those who want to stand out with a unique and comfortable
+              style.
             </p>
           </Card>
         </div>
@@ -115,7 +115,7 @@ export default function Home() {
       <section className="relative py-24 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-12 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]">
-            Il lancio si avvicina
+            Launch is approaching
           </h2>
           <CountdownTimer targetDate="2024-05-01" />
         </div>
@@ -128,7 +128,7 @@ export default function Home() {
       >
         <div className="max-w-md mx-auto text-center">
           <h2 className="text-4xl font-bold mb-8 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]">
-            Resta Aggiornato
+            Stay Updated
           </h2>
           <NewsletterForm />
         </div>
@@ -161,7 +161,7 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-8 text-center text-sm text-gray-500">
-            © 2024 Sirio Star. Tutti i diritti riservati.
+            © 2024 Sirio Star. All rights reserved.
           </div>
         </div>
       </footer>
