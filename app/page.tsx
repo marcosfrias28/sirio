@@ -136,7 +136,7 @@ export default function Home() {
       </section>
 
       {/* Countdown Section */}
-      <section className="relative py-24 px-4 bg-purple-400/30">
+      <section className="relative py-24 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-12">Launch is approaching</h2>
           <CountdownTimer targetDate="2024-05-01" />
