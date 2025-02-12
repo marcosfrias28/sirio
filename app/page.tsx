@@ -16,6 +16,7 @@ import NewsletterForm from "@/components/NewsletterForm";
 import StarfieldAnimation from "@/components/StarfieldAnimation";
 import Image from "next/image";
 import Astronauta from "./public/images/hero.webp";
+import StarSVG from "./public/images/start.svg";
 import Hoodie from "./public/hoodies/hoodie.jpeg";
 import Pants from "./public/pants/pant.jpeg";
 import { Kumar_One } from "next/font/google";
@@ -48,12 +49,19 @@ export default function Home() {
           height={800}
           className="absolute animate-fly duration-1000"
         />
+        <Image
+          src={StarSVG}
+          alt="Hero image"
+          width={200}
+          height={200}
+          className="absolute top-52 max-lg:top-32 xl:right-52 animate-fly duration-1000"
+        />
         <motion.h1
           initial={{ opacity: 0, y: -100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.5, duration: 1 }}
           className={cn(
-            "absolute top-36 max-lg:top-20 xl:left-36 text-center text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-violet-200 drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]",
+            "absolute top-36 max-lg:top-10 xl:left-36 text-center text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-violet-200 drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]",
             kumar_One.className
           )}
         >
@@ -63,7 +71,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-0 md:bottom-20 xl:bottom-36 xl:right-36 flex items-center justify-center flex-col flex-nowrap text-center z-10 max-w-4xl mx-auto"
+          className="absolute bottom-0 md:bottom-10 xl:bottom-36 xl:right-36 flex items-center justify-center flex-col flex-nowrap text-center z-10 max-w-4xl mx-auto"
         >
           <h1
             className={cn(
