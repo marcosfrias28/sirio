@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import {
   Star,
@@ -17,8 +16,12 @@ import NewsletterForm from "@/components/NewsletterForm";
 import StarfieldAnimation from "@/components/StarfieldAnimation";
 import Image from "next/image";
 import Astronauta from "./public/images/hero.webp";
+import Hoodie from "./public/hoodies/hoodie.jpeg";
+import Pants from "./public/pants/pant.jpeg";
 import { Kumar_One } from "next/font/google";
 import { cn } from "@/lib/utils";
+import Stars from "@/components/stars";
+import { AnimatePresence, motion } from "framer-motion";
 
 const kumar_One = Kumar_One({ subsets: ["latin"], weight: "400" });
 
@@ -32,10 +35,10 @@ export default function Home() {
 
   return (
     <main className="relative min-h-screen bg-black text-white overflow-hidden">
-      <StarfieldAnimation />
-
+      <Stars />
       {/* Hero Section */}
-      <section className="relative w-full min-h-screen flex items-center justify-center px-4 bg-gradient-to-t from-transparent to-purple-900/30">
+      <section className="relative w-full min-h-screen flex items-center justify-center px-4 bg-gradient-to-b to-90% from-purple-950 to-transparent">
+        <StarfieldAnimation />
         <Image
           src={Astronauta}
           blurDataURL={Astronauta.blurDataURL}
@@ -45,15 +48,23 @@ export default function Home() {
           height={800}
           className="absolute animate-fly duration-1000"
         />
-        <h1
+        <motion.h1
+          initial={{ opacity: 0, y: -100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.5, duration: 1 }}
           className={cn(
             "absolute top-36 max-lg:top-20 xl:left-36 text-center text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-violet-200 drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]",
             kumar_One.className
           )}
         >
           Coming Soon
-        </h1>
-        <div className="absolute bottom-0 md:bottom-20 xl:bottom-36 xl:right-36 flex items-center justify-center flex-col flex-nowrap text-center z-10 max-w-4xl mx-auto">
+        </motion.h1>
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.5, duration: 1 }}
+          className="absolute bottom-0 md:bottom-20 xl:bottom-36 xl:right-36 flex items-center justify-center flex-col flex-nowrap text-center z-10 max-w-4xl mx-auto"
+        >
           <h1
             className={cn(
               "text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-violet-200 drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]",
@@ -79,7 +90,7 @@ export default function Home() {
             <Sparkles className="mr-2 h-4 w-4" />
             Sign up for the newsletter
           </Button>
-        </div>
+        </motion.div>
       </section>
 
       {/* Product Preview Section */}
@@ -91,9 +102,12 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <Card className="p-6 bg-black/30 backdrop-blur-lg border-purple-500/20 overflow-hidden group">
               <div className="relative aspect-square">
-                <img
-                  src="https://i.imgur.com/XYZabc.jpg" // Replace with actual mockup image URL
+                <Image
+                  src={Hoodie}
+                  blurDataURL={Hoodie.blurDataURL}
+                  placeholder="blur"
                   alt="Sirio Star Hoodie"
+                  fill
                   className="object-cover w-full h-full rounded-lg transform group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
@@ -104,9 +118,12 @@ export default function Home() {
             </Card>
             <Card className="p-6 bg-black/30 backdrop-blur-lg border-purple-500/20 overflow-hidden group">
               <div className="relative aspect-square">
-                <img
-                  src="https://i.imgur.com/DEFghi.jpg" // Replace with actual mockup image URL
+                <Image
+                  src={Hoodie}
+                  blurDataURL={Hoodie.blurDataURL}
+                  placeholder="blur"
                   alt="Sirio Star Pants"
+                  fill
                   className="object-cover w-full h-full rounded-lg transform group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
