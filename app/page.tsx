@@ -119,8 +119,8 @@ export default function Home() {
             <Card className="p-6 bg-black/30 backdrop-blur-lg border-purple-500/20 overflow-hidden group">
               <div className="relative aspect-square">
                 <Image
-                  src={Hoodie}
-                  blurDataURL={Hoodie.blurDataURL}
+                  src={Pants}
+                  blurDataURL={Pants.blurDataURL}
                   placeholder="blur"
                   alt="Sirio Star Pants"
                   fill
